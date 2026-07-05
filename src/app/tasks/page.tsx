@@ -24,7 +24,6 @@ export default function TasksPage() {
     const [editTitle, setEditTitle] = useState("");
     const [editDescription, setEditDescription] = useState("");
 
-    // Modal visibility state (UI-only, does not touch existing logic)
     const [isAddOpen, setIsAddOpen] = useState(false);
     const [deleteTarget, setDeleteTarget] = useState<Task | null>(null);
 
@@ -33,14 +32,12 @@ export default function TasksPage() {
             ? localStorage.getItem("accessToken")
             : "";
 
-    // Fixed: compare case-insensitively so "PENDING"/"Pending" both match
     const filteredTasks = tasks.filter((task) => {
         if (filter === "ALL") return true;
 
         return task.status?.toUpperCase() === filter.toUpperCase();
     });
 
-    // Derived, display-only counts (case-insensitive, same fix as the filter above)
     const totalCount = tasks.length;
     const completedCount = tasks.filter(
         (t) => t.status?.toUpperCase() === "COMPLETED",
@@ -403,7 +400,6 @@ export default function TasksPage() {
 
             </div>
 
-            {/* Add Task Modal */}
             {isAddOpen && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
@@ -463,7 +459,6 @@ export default function TasksPage() {
                 </div>
             )}
 
-            {/* Edit Task Modal */}
             {editingId !== null && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"

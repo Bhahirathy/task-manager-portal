@@ -40,7 +40,6 @@ export default function RegisterPage() {
         <div className="flex min-h-screen items-center justify-center bg-[#F5F6F8] px-4 py-10">
             <div className="grid w-full max-w-4xl overflow-hidden rounded-2xl bg-white shadow-xl lg:grid-cols-2">
 
-                {/* Brand panel - hidden on small screens */}
                 <div className="relative hidden flex-col justify-between bg-[#3454D1] p-10 text-white lg:flex">
                     <div>
                         <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/15 text-lg font-bold">
@@ -69,7 +68,6 @@ export default function RegisterPage() {
                     </div>
                 </div>
 
-                {/* Form panel */}
                 <div className="flex flex-col justify-center p-8 sm:p-10">
                     <h1 className="text-2xl font-bold tracking-tight text-[#1C2333] sm:text-3xl">
                         Create your account
